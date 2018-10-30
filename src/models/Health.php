@@ -2,7 +2,7 @@
 namespace Lextira\PureFTPdClient\Models;
 
 class Health extends BaseModel {
-    protected $path = '/health';
+    protected $path = 'health';
     protected $auth = false;
 
     public function check()

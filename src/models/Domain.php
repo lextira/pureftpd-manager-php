@@ -4,7 +4,7 @@ namespace Lextira\PureFTPdClient\Models;
 use http\Exception\BadMethodCallException;
 
 class Domain extends BaseModel {
-    protected $path = '/domains';
+    protected $path = 'domains';
 
     public function get($id)
     {
