@@ -17,40 +17,50 @@ abstract class BaseModel {
 
     public function getPage($page)
     {
-        return $this->client->get($this->path, [
+        $response = $this->client->get($this->path, [
             'query' => ['page' => $page,],
             'headers' => $this->getHeaders(),
         ]);
+
+        return $this->parseResponse($response);
     }
 
     public function get($id)
     {
-        return $this->client->get($this->path . '/' . urlencode($id), [
+        $response = $this->client->get($this->path . '/' . urlencode($id), [
             'headers' => $this->getHeaders(),
         ]);
+
+        return $this->parseResponse($response);
     }
 
     public function delete($id)
     {
-        return $this->client->delete($this->path . '/' . urlencode($id), [
+        $response = $this->client->delete($this->path . '/' . urlencode($id), [
             'headers' => $this->getHeaders(),
         ]);
+
+        return $this->parseResponse($response);
     }
 
     public function create($data)
     {
-        return $this->client->post($this->path, [
+        $response = $this->client->post($this->path, [
             'headers' => $this->getHeaders(),
             'json' => $data,
         ]);
+
+        return $this->parseResponse($response);
     }
 
     public function update($id, $data)
     {
-        return $this->client->put($this->path . '/' . urlencode($id), [
+        $response = $this->client->put($this->path . '/' . urlencode($id), [
             'headers' => $this->getHeaders(),
             'json' => $data,
         ]);
+
+        return $this->parseResponse($response);
     }
 
     protected function getHeaders()
@@ -65,5 +75,10 @@ abstract class BaseModel {
         }
 
         return $headers;
+    }
+
+    protected function parseResponse($response)
+    {
+        return json_decode($response->getBody());
     }
 }

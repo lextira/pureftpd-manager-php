@@ -7,9 +7,11 @@ class Health extends BaseModel {
 
     public function check()
     {
-        return $this->client->get($this->path . '/check', [
+        $response = $this->client->get($this->path . '/check', [
             'headers' => $this->getHeaders(),
         ]);
+
+        return $this->parseResponse($response);
     }
 
     public function getPage($page)

@@ -13,8 +13,11 @@ class PureFTPdClient {
 
     public function __construct()
     {
+        $baseURL = config(PureFTPdServiceProvider::CONFIG_PREFIX . '.host');
+        $baseURL .= config(PureFTPdServiceProvider::CONFIG_PREFIX . '.api_path');
+
         $this->client = new Client([
-            'base_uri' => config(PureFTPdServiceProvider::CONFIG_PREFIX . '.host'),
+            'base_uri' => $baseURL,
         ]);
         $this->authKey = config(PureFTPdServiceProvider::CONFIG_PREFIX . '.auth_token');
     }
