@@ -1,0 +1,29 @@
+{
+    "name": "lextira/pureftpd-client",
+    "description": "Client library for https://github.com/lextira/pureftpd.",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=7.1.3",
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/config": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lextira\\PureFTPdClient\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lextira\\PureFTPdClient\\providers\\ServiceProvider"
+            ]
+        }
+    }
+}
