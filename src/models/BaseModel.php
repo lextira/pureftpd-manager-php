@@ -1,6 +1,9 @@
 <?php
 namespace Lextira\PureFTPdClient\Models;
 
+use GuzzleHttp\Exception\ClientException;
+use  \Illuminate\Validation\ValidationException;
+
 abstract class BaseModel {
     protected $client;
     protected $where = [];
@@ -45,20 +48,28 @@ abstract class BaseModel {
 
     public function create($data)
     {
-        $response = $this->client->post($this->path, [
-            'headers' => $this->getHeaders(),
-            'json' => $data,
-        ]);
+        try {
+            $response = $this->client->post($this->path, [
+                'headers' => $this->getHeaders(),
+                'json' => $data,
+            ]);
+        }  catch (ClientException $exception) {
+            $this->handleClientException($exception);
+        }
 
         return $this->parseResponse($response);
     }
 
     public function update($id, $data)
     {
-        $response = $this->client->put($this->path . '/' . urlencode($id), [
-            'headers' => $this->getHeaders(),
-            'json' => $data,
-        ]);
+        try {
+            $response = $this->client->put($this->path . '/' . urlencode($id), [
+                'headers' => $this->getHeaders(),
+                'json' => $data,
+            ]);
+        }  catch (ClientException $exception) {
+            $this->handleClientException($exception);
+        }
 
         return $this->parseResponse($response);
     }
@@ -80,5 +91,14 @@ abstract class BaseModel {
     protected function parseResponse($response)
     {
         return json_decode($response->getBody());
+    }
+
+    protected function handleClientException($exception)
+    {
+        $response = json_decode($exception->getResponse()->getBody(), true);
+
+        $error = ValidationException::withMessages($response['errors']);
+
+        throw $error;
     }
 }

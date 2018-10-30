@@ -135,12 +135,16 @@ stdClass Object
 )
 */
 
-$ftpClient->accounts()->create([
-   'login' => 'my_login',
-   'password' => 'pass',
-   'relative_dir' => 'dir',
-   'description' => 'desc',
-]);
+try {
+    $ftpClient->accounts()->create([
+       'login' => 'my_login',
+       'password' => 'pass',
+       'relative_dir' => 'dir',
+       'description' => 'desc',
+    ]);
+} catch (\Illuminate\Validation\ValidationException $exception) {
+    print_r($exception->errors());
+}
 
 /*
 stdClass Object
@@ -169,13 +173,16 @@ stdClass Object
 )
 */
 
-
-$ftpClient->accounts()->update($id, [
-   'login' => 'my_login,
-   'password' => 'pass',
-   'relative_dir' => 'dir',
-   'description' => 'desc',
-]);
+try {
+    $ftpClient->accounts()->update($id, [
+       'login' => 'my_login,
+       'password' => 'pass',
+       'relative_dir' => 'dir',
+       'description' => 'desc',
+    ]);
+} catch (\Illuminate\Validation\ValidationException $exception) {
+    print_r($exception->errors());
+}
 
 /*
 stdClass Object
