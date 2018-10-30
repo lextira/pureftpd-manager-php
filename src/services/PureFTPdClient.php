@@ -16,7 +16,7 @@ class PureFTPdClient {
         $this->client = new Client([
             'base_uri' => config(PureFTPdServiceProvider::CONFIG_PREFIX . '.host'),
         ]);
-        $this->authKey = config(PureFTPdServiceProvider::CONFIG_PREFIX . '.host');
+        $this->authKey = config(PureFTPdServiceProvider::CONFIG_PREFIX . '.auth_token');
     }
 
     public function accounts()
