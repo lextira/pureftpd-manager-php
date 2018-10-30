@@ -1,4 +1,5 @@
 ## pureftp-client
+Laravel client package for <https://github.com/lextira/pureftpd>
 
 ### Installation
 
@@ -119,12 +120,12 @@ stdClass Object
 
                 )
 
-            [first_page_url] => http://development.lexfile.ch/api/v1/accounts?page=1
+            [first_page_url] => http://example.com/api/v1/accounts?page=1
             [from] => 1
             [last_page] => 1
-            [last_page_url] => http://development.lexfile.ch/api/v1/accounts?page=1
+            [last_page_url] => http://example.com/api/v1/accounts?page=1
             [next_page_url] => 
-            [path] => http://development.lexfile.ch/api/v1/accounts
+            [path] => http://example.com/api/v1/accounts
             [per_page] => 15
             [prev_page_url] => 
             [to] => 1
@@ -231,12 +232,12 @@ stdClass Object
 
                 )
 
-            [first_page_url] => http://development.lexfile.ch/api/v1/domains?page=1
+            [first_page_url] => http://example.com/api/v1/domains?page=1
             [from] => 1
             [last_page] => 1
-            [last_page_url] => http://development.lexfile.ch/api/v1/domains?page=1
+            [last_page_url] => http://example.com/api/v1/domains?page=1
             [next_page_url] => 
-            [path] => http://development.lexfile.ch/api/v1/domains
+            [path] => http://example.com/api/v1/domains
             [per_page] => 15
             [prev_page_url] => 
             [to] => 1
