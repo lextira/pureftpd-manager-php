@@ -6,7 +6,8 @@
     "require": {
         "php": ">=7.1.3",
         "guzzlehttp/guzzle": "^6.3",
-        "illuminate/config": "^5.7"
+        "illuminate/config": "^5.7",
+        "illuminate/support": "^5.7"
     },
     "autoload": {
         "psr-4": {
@@ -22,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lextira\\PureFTPdClient\\providers\\ServiceProvider"
+                "Lextira\\PureFTPdClient\\Providers\\PureFTPdServiceProvider"
             ]
         }
     }

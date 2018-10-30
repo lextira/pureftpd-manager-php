@@ -1,7 +1,9 @@
 <?php
-namespace Lextira\PureFTPdClient\Services;
+namespace Lextira\PureFTPdClient\Providers;
 
-class ServiceProvider {
+use Illuminate\Support\ServiceProvider;
+
+class PureFTPdServiceProvider extends ServiceProvider {
     const CONFIG_PREFIX = 'lextira_pureftpd';
 
     public function boot()

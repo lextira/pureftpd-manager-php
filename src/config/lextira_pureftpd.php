@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'host' => 'http://localhost',
-    'auth_token' => '',
+    'host' => env('LEXTIRA_PUREFTPD_HOST', 'http://localhost'),
+    'auth_token' => env('LEXTIRA_PUREFTPD_AUTH_KEY', ''),
 ];
