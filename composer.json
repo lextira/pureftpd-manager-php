@@ -1,5 +1,5 @@
 {
-    "name": "lextira/pureftpd-client",
+    "name": "lextira/pureftpd-manager",
     "description": "Client library for https://github.com/lextira/pureftpd.",
     "license": "MIT",
     "type": "library",
