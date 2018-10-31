@@ -3,16 +3,6 @@ Laravel client package for <https://github.com/lextira/pureftpd>
 
 ### Installation
 
-- Add lextira/pureftpd-client repo to composer.json
-```
-"repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/lextira/pureftpd-client"
-        }
-    ],
-```
-
 - Run
 ```
 composer require lextira/pureftpd-client
