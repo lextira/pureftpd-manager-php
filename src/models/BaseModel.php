@@ -1,5 +1,5 @@
 <?php
-namespace Lextira\PureFTPdClient\Models;
+namespace Lextira\PureFTPdManager\Models;
 
 use GuzzleHttp\Exception\ClientException;
 use  \Illuminate\Validation\ValidationException;
@@ -77,7 +77,7 @@ abstract class BaseModel {
     protected function getHeaders()
     {
         $headers = [
-            'User-Agent' => 'Lextira/PureFTPdClient/1.0',
+            'User-Agent' => 'Lextira/PureFTPdManager/1.0',
             'Accept'     => 'application/json',
         ];
 

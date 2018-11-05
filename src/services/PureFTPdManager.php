@@ -1,13 +1,13 @@
 <?php
-namespace Lextira\PureFTPdClient\Services;
+namespace Lextira\PureFTPdManager\Services;
 
 use GuzzleHttp\Client;
-use Lextira\PureFTPdClient\Models\Account;
-use Lextira\PureFTPdClient\Models\Domain;
-use Lextira\PureFTPdClient\Models\Health;
-use Lextira\PureFTPdClient\Providers\PureFTPdServiceProvider;
+use Lextira\PureFTPdManager\Models\Account;
+use Lextira\PureFTPdManager\Models\Domain;
+use Lextira\PureFTPdManager\Models\Health;
+use Lextira\PureFTPdManager\Providers\PureFTPdServiceProvider;
 
-class PureFTPdClient {
+class PureFTPdManager {
     protected $client;
     protected $authKey;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Lextira\PureFTPdClient\Models;
+namespace Lextira\PureFTPdManager\Models;
 
 class Health extends BaseModel {
     protected $path = 'health';

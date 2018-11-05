@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lextira\\PureFTPdClient\\": "src/"
+            "Lextira\\PureFTPdManager\\": "src/"
         }
     },
     "config": {
@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lextira\\PureFTPdClient\\Providers\\PureFTPdServiceProvider"
+                "Lextira\\PureFTPdManager\\Providers\\PureFTPdServiceProvider"
             ]
         }
     }

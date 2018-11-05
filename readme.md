@@ -1,11 +1,11 @@
-## pureftp-client
-Laravel client package for <https://github.com/lextira/pureftpd>
+## pureftpd-manager
+Laravel client package that allows to manage FTP accounts for <https://github.com/lextira/pureftpd>
 
 ### Installation
 
 - Run
 ```
-composer require lextira/pureftpd-client
+composer require lextira/pureftpd-manager
 ```
 - Set environment variables LEXTIRA_PUREFTPD_HOST and LEXTIRA_PUREFTPD_AUTH_KEY for configuration
 
@@ -18,7 +18,7 @@ composer require lextira/pureftpd-client
 namespace App\Services\Backend\Providers;
 
 ...
-use Lextira\PureFTPdClient\Providers\PureFTPdServiceProvider;
+use Lextira\PureFTPdManager\Providers\PureFTPdServiceProvider;
 
 /**
  * Class BackendServiceProvider
@@ -43,20 +43,20 @@ class BackendServiceProvider extends ServiceProvider
 
 ```
 
-- Inject PureFTPdClient wherever you want
+- Inject PureFTPdManager wherever you want
 
 ```
 <?php
 namespace App\Domains\FTP\Jobs;
 
 use Illuminate\Http\Request;
-use Lextira\PureFTPdClient\Services\PureFTPdClient;
+use Lextira\PureFTPdManager\Services\PureFTPdManager;
 use Lucid\Foundation\Job;
 
 class GetAccountsJob extends Job {
-    public function handle(PureFTPdClient $ftpClient, Request $request)
+    public function handle(PureFTPdManager $ftpManager, Request $request)
     {
-        return $ftpClient->accounts()->getPage($request->input('page', 1));
+        return $ftpManager->accounts()->getPage($request->input('page', 1));
     }
 }
 ```
@@ -65,7 +65,7 @@ class GetAccountsJob extends Job {
 
 ```
 <?php
-$ftpClient->accounts()->get($id);
+$ftpManager->accounts()->get($id);
 
 /*
 stdClass Object
@@ -86,7 +86,7 @@ stdClass Object
 )
 */
 
-$ftpClient->accounts()->getPage($pageNumber);
+$ftpManager->accounts()->getPage($pageNumber);
 
 /*
 stdClass Object
@@ -127,7 +127,7 @@ stdClass Object
 */
 
 try {
-    $ftpClient->accounts()->create([
+    $ftpManager->accounts()->create([
        'login' => 'my_login',
        'password' => 'pass',
        'relative_dir' => 'dir',
@@ -165,7 +165,7 @@ stdClass Object
 */
 
 try {
-    $ftpClient->accounts()->update($id, [
+    $ftpManager->accounts()->update($id, [
        'login' => 'my_login,
        'password' => 'pass',
        'relative_dir' => 'dir',
@@ -202,7 +202,7 @@ stdClass Object
 )
 */
 
-$ftpClient->domains()->getPage($pageNumber);
+$ftpManager->domains()->getPage($pageNumber);
 
 /*
 stdClass Object
@@ -238,7 +238,7 @@ stdClass Object
 )
 */
 
-$ftpClient->health()->check();
+$ftpManager->health()->check();
 
 /*
 stdClass Object

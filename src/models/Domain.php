@@ -1,5 +1,5 @@
 <?php
-namespace Lextira\PureFTPdClient\Models;
+namespace Lextira\PureFTPdManager\Models;
 
 use http\Exception\BadMethodCallException;
 

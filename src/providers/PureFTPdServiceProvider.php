@@ -1,5 +1,5 @@
 <?php
-namespace Lextira\PureFTPdClient\Providers;
+namespace Lextira\PureFTPdManager\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
