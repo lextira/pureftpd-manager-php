@@ -2,7 +2,7 @@
 namespace Lextira\PureFTPdManager\Models;
 
 use GuzzleHttp\Exception\ClientException;
-use  \Illuminate\Validation\ValidationException;
+use Illuminate\Validation\ValidationException;
 
 abstract class BaseModel {
     protected $client;
